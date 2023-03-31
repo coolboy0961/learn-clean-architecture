@@ -48,9 +48,9 @@
             "@php artisan key:generate --ansi"
         ],
         "unit-test": "php artisan test --env=unittest --testsuite=unit",
-        "api-test": "cd wiremock && ./stop.sh 3000 || sleep 5 ./start.sh 3000 3000 && cd .. && sleep 5 && php artisan test --env=apitest --testsuite=api && cd wiremock && ./stop.sh 3000",
+        "api-test": "cd wiremock && ./stop.sh 3000 || sleep 5 && ./start.sh 3000 3000 && cd .. && sleep 5 && php artisan test --env=apitest --testsuite=api && cd wiremock && ./stop.sh 3000",
         "clear-laravel-cache": "php artisan cache:clear && php artisan config:clear && php artisan route:clear",
-        "serve": "php artisan serve --port=8000 --timeout=7200"
+        "serve": "php artisan serve --port=8000"
     },
     "extra": {
         "laravel": {
