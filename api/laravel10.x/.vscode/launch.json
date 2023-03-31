@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Listen for Xdebug(PHPビルトインサーバ)",
+        "type": "php",
+        "request": "launch",
+        "port": 9003
+      },
+      {
+        "name": "Launch currently open script(PHP CLI)",
+        "type": "php",
+        "request": "launch",
+        "cwd": "${fileDirname}",
+        "runtimeExecutable": "/usr/bin/php",
+        "runtimeArgs": [
+          "-dzend_extension=xdebug.so"
+        ],
+        "program": "${workspaceRoot}/vendor/bin/phpunit",
+        "args": [
+          "${file}"
+        ],
+        "port": 9003,
+        "log": false,
+        "env": {
+          "XDEBUG_MODE": "debug,develop",
+          "XDEBUG_CONFIG": "client_port=${port}"
+        }
+      }
+    ]
+  }
