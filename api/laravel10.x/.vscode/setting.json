@@ -1,4 +1,10 @@
 {
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/vendor/*/**": true
+    },
     "php.validate.executablePath": "/usr/bin/php",
     "phpunit.phpunit": "vendor/bin/phpunit",
     "php.suggest.basic": false
