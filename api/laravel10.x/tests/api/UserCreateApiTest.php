@@ -24,6 +24,10 @@ class UserCreateApiTest extends TestCase
             'name' => 'John Doe',
             'email' => 'johndoe@example.com',
         ];
+        $expectedUserInDB = (new EloquentUser([
+            'name' => 'John Doe',
+            'email' => 'johndoe@example.com',
+        ]))->toArray();
 
         // Act
         $client = new Client();
@@ -39,9 +43,15 @@ class UserCreateApiTest extends TestCase
 
         $actualStatus = $response->getStatusCode();
         $actualUser = json_decode($response->getBody()->getContents(), true);
+        $actualUserInDB = EloquentUser::all()->all()[0]->makeHidden([
+            'id',
+            'created_at',
+            'updated_at'
+        ])->toArray();
 
         // Assert
         $this->assertSame($actualStatus, $expectedStatus);
         $this->assertEquals($actualUser, $expectedUser);
+        $this->assertEquals($expectedUserInDB, $actualUserInDB);
     }
 }
