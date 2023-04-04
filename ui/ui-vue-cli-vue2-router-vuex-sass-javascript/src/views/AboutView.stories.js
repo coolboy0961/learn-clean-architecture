@@ -17,9 +17,10 @@ const Template = () => {
     store,
   };
 };
-
 export const Default = Template.bind({});
-Default.play = async () => {
+export const Test = Template.bind({});
+Test.storyName = "Countボタンを2回クリックすると'count: 2'が表示されること";
+Test.play = async () => {
   // Arrange
   const expected = "count: 2";
 
