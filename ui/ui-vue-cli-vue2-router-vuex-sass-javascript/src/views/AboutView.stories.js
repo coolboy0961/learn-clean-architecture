@@ -21,6 +21,7 @@ const Template = () => {
 export const Default = Template.bind({});
 Default.play = async () => {
   // Arrange
+  const expected = "count: 2";
 
   // Act
   const incrementButton = await screen.findByRole("button");
@@ -28,7 +29,7 @@ Default.play = async () => {
   await userEvent.click(incrementButton);
   await userEvent.click(incrementButton);
 
-  const actual = await screen.findByText("count: 2");
+  const actual = await screen.findByText(expected);
 
   // Assert
   expect(actual).toBeInTheDocument();
