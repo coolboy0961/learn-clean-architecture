@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/jiadong.chen/git/learn-clean-architecture/ui/ui-vue-cli-vue2-router-vuex-sass-javascript/tests/unit/AboutView2.spec.js">
+    <testCase name="AboutView.vue Storeのcount数が画面に表示されている" duration="35"/>
+    <testCase name="AboutView.vue increment buttonをクリックするとStoreのincrementアクションが呼ばれる" duration="4"/>
+  </file>
+</testExecutions>
