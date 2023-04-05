@@ -33,17 +33,4 @@ class ExternalApiClientImplTest extends TestCase
         $this->assertEquals($expectedStatus, $actualStatus);
         $this->assertEquals($expectedBody, $actualBody);
     }
-
-    // public function testGetThrowsExceptionWhenApiClientFails()
-    // {
-    //     $httpClient = $this->createMock(GuzzleHttp\Client::class);
-    //     $apiClient = new ExternalApiClient('http://example.com', $httpClient);
-
-    //     $httpClient->expects($this->once())
-    //         ->method('request')
-    //         ->willThrowException(new Exception('Failed to connect'));
-
-    //     $this->expectException(Exception::class);
-    //     $apiClient->get('/api/v1/test');
-    // }
 }

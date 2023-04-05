@@ -6,7 +6,6 @@ use App\Gateway\Repositories\Models\EloquentUser;
 use Tests\TestCase;
 use GuzzleHttp\Client;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use WireMock\Client\WireMock;
 
 
 class UserCreateApiTest extends TestCase
