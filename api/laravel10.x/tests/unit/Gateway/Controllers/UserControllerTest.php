@@ -16,8 +16,11 @@ class UserControllerTest extends TestCase
     public function test_Requestのユーザ情報を受け取って正しくCreateUseCaseに渡せること()
     {
         // Arrange
-        $expectedContent = json_encode(new UserResponse(new User('John Doe', 'john@example.com')));
         $expectedStatus = Response::HTTP_CREATED;
+        $expectedContent = json_encode([
+            'name' => 'John Doe',
+            'email' => 'john@example.com'
+        ]);
         $createUserUseCaseMock = $this->createMock(CreateUserUseCase::class);
         $createUserUseCaseMock->expects($this->once()) // モックした対象はcontroller内で一回しか呼び出されていないかチェック
             ->method('execute') // モックする関数を選択
@@ -49,10 +52,19 @@ class UserControllerTest extends TestCase
     public function test_GetAllUsersUseCaseから取得したユーザ情報を正しくResponseの形で返却できること()
     {
         // Arrange
-        $expectedResponse = [
-            new UserResponse(new User('John Doe', 'john@example.com', '08011112222')),
-            new UserResponse(new User('Jane Doe', 'jane@example.com', '08011113333')),
-        ];
+        $expectedStatus = 200;
+        $expectedContent = json_encode([
+            [
+                'name' => 'John Doe',
+                'email' => 'john@example.com',
+                'phoneNumber' => '08011112222'
+            ],
+            [
+                'name' => 'Jane Doe',
+                'email' => 'jane@example.com',
+                'phoneNumber' => '08011113333'
+            ],
+        ]);
 
 
         $getAllUsersUseCaseMock = $this->createMock(GetAllUsersUseCase::class);
@@ -67,9 +79,12 @@ class UserControllerTest extends TestCase
 
         // Act
         $controller = new UserController($createUserUseCaseMock, $getAllUsersUseCaseMock);
-        $actualResponses = $controller->getAll();
+        $responses = $controller->getAll();
+        $actualStatus = $responses->getStatusCode();
+        $actualContent = $responses->getContent();
 
         // Assert
-        $this->assertEquals($actualResponses, $expectedResponse);
+        $this->assertSame($expectedStatus, $actualStatus);
+        $this->assertEquals($expectedContent, $actualContent);
     }
 }

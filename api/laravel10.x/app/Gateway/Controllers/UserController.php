@@ -35,6 +35,6 @@ class UserController extends Controller
     public function getAll()
     {
         $users = $this->getAllUsersUseCase->execute();
-        return UserResponse::collection($users);
+        return response()->json(UserResponse::collection($users), Response::HTTP_OK);
     }
 }
