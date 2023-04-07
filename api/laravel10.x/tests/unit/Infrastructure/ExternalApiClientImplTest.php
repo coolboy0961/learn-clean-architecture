@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Unit\Infrastructure;
+
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;

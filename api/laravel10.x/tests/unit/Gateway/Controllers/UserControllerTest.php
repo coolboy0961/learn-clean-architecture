@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Http\Controllers;
+namespace Tests\Unit\Gateway\Controllers;
 
 use App\Domain\Entities\User;
 use App\Applications\UseCases\CreateUserUseCase;
@@ -37,8 +37,8 @@ class UserControllerTest extends TestCase
         ]);
         $controller = new UserController($createUserUseCaseMock, $getAllUsersUseCaseMock);
         $response = $controller->create($request);
-        $actualContent = $response->getContent();
         $actualStatus = $response->getStatusCode();
+        $actualContent = $response->getContent();
 
         // console logを確認する小技
         // echo 'this is a test log.';

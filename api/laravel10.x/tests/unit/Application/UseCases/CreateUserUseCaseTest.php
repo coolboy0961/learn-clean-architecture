@@ -20,6 +20,8 @@ class CreateUserUseCaseTest extends TestCase
             ->with(new User('John Doe', 'john@example.com'))
             ->willReturn(new User('John Doe', 'john@example.com'));
 
+        // Act
+
         $useCase = new CreateUserUseCase($repository);
         $actualUser = $useCase->execute($expectedUser);
 
