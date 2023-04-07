@@ -21,35 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(ExternalApiClient::class, ExternalApiClientImpl::class);
-        $this->app->bind(PrivacyExternalApi::class, function ($app) {
-            return new PrivacyExternalApiImpl($app->make(ExternalApiClient::class));
-        });
-        $this->app->bind(UserRepository::class, UserRepositoryImpl::class);
-        $this->app->bind(
-            CreateUserUseCase::class,
-            function ($app) {
-                return new CreateUserUseCase($app->make(UserRepository::class));
-            }
-        );
-        $this->app->bind(
-            GetAllUsersUseCase::class,
-            function ($app) {
-                return new GetAllUsersUseCase(
-                    $app->make(UserRepository::class),
-                    $app->make(PrivacyExternalApi::class)
-                );
-            }
-        );
-        $this->app->bind(
-            UserController::class,
-            function ($app) {
-                return new UserController(
-                    $app->make(CreateUserUseCase::class),
-                    $app->make(GetAllUsersUseCase::class)
-                );
-            }
-        );
+
     }
 
     /**
