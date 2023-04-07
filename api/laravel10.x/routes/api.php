@@ -20,4 +20,4 @@ use App\Gateway\Controllers\UserController;
 //     return $request->user();
 // });
 
-// Route::get('/v1/hello-world', [HelloWorldController::class, 'helloWorld']);
+Route::get('/v1/hello-world', [HelloWorldController::class, 'helloWorld']);

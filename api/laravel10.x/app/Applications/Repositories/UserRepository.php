@@ -8,5 +8,5 @@ interface UserRepository
 {
     public function create(User $user): User;
 
-    public function getAll(): array;
+    // public function getAll(): array;
 }
