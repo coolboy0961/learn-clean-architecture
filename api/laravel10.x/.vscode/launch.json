@@ -27,7 +27,12 @@
         "log": false,
         "env": {
           "XDEBUG_MODE": "debug,develop",
-          "XDEBUG_CONFIG": "client_port=${port}"
+          "XDEBUG_CONFIG": "client_port=${port}",
+          "APP_NAME": "Laravel",
+          "APP_ENV": "unittest",
+          "TEST_ENV": "unittest",
+          "DB_CONNECTION": "sqlite",
+          "DB_DATABASE": ":memory:",
         }
       }
     ]
