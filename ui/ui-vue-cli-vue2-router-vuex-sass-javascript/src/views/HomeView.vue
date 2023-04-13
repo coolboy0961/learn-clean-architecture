@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hello-world />
+    <hello-world :msg="message" />
     <canvas-test />
   </div>
 </template>
@@ -15,6 +15,12 @@ export default {
   components: {
     HelloWorld,
     CanvasTest,
+  },
+
+  data() {
+    return {
+      message: "Hello from parent component!",
+    };
   },
 };
 </script>
