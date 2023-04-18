@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[scripts]
+create-venv = "bash -c \"export PIPENV_VENV_IN_PROJECT=true && pipenv --python 3.10\""
+delete-venv = "pipenv --rm"
+sync = "bash -c \"export PIPENV_VENV_IN_PROJECT=true && pipenv sync --dev\""
+start = "bash -c \"export ENVIRONMENT=local && uvicorn main:app --reload\""
+unit-test = "bash -c \"export ENVIRONMENT=unit-test && python -m pytest -s tests/unit-test\""
+api-test = "bash -c \"export ENVIRONMENT=local && python -m pytest -s tests/api-test\""
+
+[packages]
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+sqlalchemy = "*"
+requests = "*"
+python-dotenv = "*"
+
+[dev-packages]
+autopep8 = "*"
+pytest = "*"
+httpx = "*"
+pytest-mock = "*"
+requests-mock = "*"
+wiremock = "*"
+
+[requires]
+python_version = "3.10"
+python_full_version = "3.10.7"
