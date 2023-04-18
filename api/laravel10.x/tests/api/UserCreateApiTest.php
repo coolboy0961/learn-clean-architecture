@@ -2,7 +2,7 @@
 
 namespace Tests\Api;
 
-use App\Gateway\Repositories\Models\EloquentUser;
+use App\Adapters\Gateway\Repositories\Models\EloquentUser;
 use Tests\TestCase;
 use GuzzleHttp\Client;
 use Illuminate\Foundation\Testing\DatabaseMigrations;

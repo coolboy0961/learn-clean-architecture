@@ -1,9 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Gateway\Controllers\HelloWorldController;
-use App\Gateway\Controllers\UserController;
+use App\Adapters\Controllers\HelloWorldController;
+use App\Adapters\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------

@@ -3,8 +3,8 @@
 namespace Tests\Unit\Gateway\Repositories;
 
 use App\Domain\Entities\User;
-use App\Gateway\Repositories\Models\EloquentUser;
-use App\Gateway\Repositories\UserRepositoryImpl;
+use App\Adapters\Gateway\Repositories\Models\EloquentUser;
+use App\Adapters\Gateway\Repositories\UserRepositoryImpl;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

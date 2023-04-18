@@ -1,15 +1,14 @@
 <?php
 
-namespace Tests\Unit\Gateway\Controllers;
+namespace Tests\unit\Adapters\Controllers;
 
+use Tests\TestCase;
 use App\Domain\Entities\User;
+use Illuminate\Http\Response;
+use App\Adapters\Controllers\UserController;
 use App\Applications\UseCases\CreateUserUseCase;
 use App\Applications\UseCases\GetAllUsersUseCase;
-use App\Gateway\Controllers\UserController;
-use App\Gateway\Controllers\Requests\CreateUserRequest;
-use App\Gateway\Controllers\Responses\UserResponse;
-use Illuminate\Http\Response;
-use Tests\TestCase;
+use App\Adapters\Controllers\Requests\CreateUserRequest;
 
 class UserControllerTest extends TestCase
 {

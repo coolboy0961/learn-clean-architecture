@@ -3,8 +3,8 @@
 namespace Tests\Unit\Gateway\ExternalApis;
 
 use App\Domain\Entities\User;
-use App\Gateway\ExternalApis\Infrastructure\ExternalApiClient;
-use App\Gateway\ExternalApis\PrivacyExternalApiImpl;
+use App\Adapters\Gateway\ExternalApis\Infrastructure\ExternalApiClient;
+use App\Adapters\Gateway\ExternalApis\PrivacyExternalApiImpl;
 use App\Infrastructure\ExternalApiClientImpl;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;

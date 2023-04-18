@@ -2,7 +2,7 @@
 
 namespace App\Infrastructure;
 
-use App\Gateway\ExternalApis\Infrastructure\ExternalApiClient;
+use App\Adapters\Gateway\ExternalApis\Infrastructure\ExternalApiClient;
 use GuzzleHttp\Client;
 
 class ExternalApiClientImpl implements ExternalApiClient

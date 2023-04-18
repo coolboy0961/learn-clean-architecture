@@ -1,9 +1,7 @@
 <?php
-
-namespace App\Gateway\Controllers\Responses;
+namespace App\Adapters\Controllers\Responses;
 
 use App\Domain\Entities\User;
-use Illuminate\Contracts\Support\Arrayable;
 use JsonSerializable;
 
 class UserResponse implements JsonSerializable

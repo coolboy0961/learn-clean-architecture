@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Gateway\Repositories\Models;
+namespace App\Adapters\Gateway\Repositories\Models;
 
 use App\Domain\Entities\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Gateway\Repositories;
+namespace App\Adapters\Gateway\Repositories;
 
 use App\Domain\Entities\User;
 use App\Applications\Repositories\UserRepository;
-use App\Gateway\Repositories\Models\EloquentUser;
+use App\Adapters\Gateway\Repositories\Models\EloquentUser;
 
 class UserRepositoryImpl implements UserRepository
 {

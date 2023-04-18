@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Gateway\Controllers;
+namespace App\Adapters\Controllers;
 
 class HelloWorldController extends Controller
 {

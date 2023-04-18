@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Gateway\ExternalApis;
+namespace App\Adapters\Gateway\ExternalApis;
 
 use App\Applications\ExternalApis\PrivacyExternalApi;
 use App\Domain\Entities\User;
-use App\Gateway\ExternalApis\Infrastructure\ExternalApiClient;
+use App\Adapters\Gateway\ExternalApis\Infrastructure\ExternalApiClient;
 
 class PrivacyExternalApiImpl implements PrivacyExternalApi
 {

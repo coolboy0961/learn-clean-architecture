@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Gateway\ExternalApis\Infrastructure;
+namespace App\Adapters\Gateway\ExternalApis\Infrastructure;
 
 interface ExternalApiClient
 {

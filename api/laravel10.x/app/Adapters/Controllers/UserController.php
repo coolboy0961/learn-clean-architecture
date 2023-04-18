@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Gateway\Controllers;
+namespace App\Adapters\Controllers;
 
 use App\Domain\Entities\User;
-use App\Gateway\Controllers\Requests\CreateUserRequest;
-use App\Gateway\Controllers\Responses\UserResponse;
+use App\Adapters\Controllers\Requests\CreateUserRequest;
+use App\Adapters\Controllers\Responses\UserResponse;
 use App\Applications\UseCases\CreateUserUseCase;
 use App\Applications\UseCases\GetAllUsersUseCase;
 use Illuminate\Http\Response;
