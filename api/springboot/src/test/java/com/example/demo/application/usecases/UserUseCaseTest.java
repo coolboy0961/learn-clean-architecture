@@ -23,7 +23,7 @@ class UserUseCaseTest {
   private UserRepository userRepository;
 
   @Test
-    void createUser() {
+    void test_UserUsecaseのCreateメソッドを呼び出してUser情報が返却されたこと() {
         // Arrange
         User expectedUser = new User("John Doe", "john@example.com");
         when(userRepository.save(expectedUser))

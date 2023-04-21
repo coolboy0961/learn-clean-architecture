@@ -30,7 +30,7 @@ class UserControllerTest {
   private UserUseCase userUseCase;
 
   @Test
-  void createUser() throws Exception {
+  void test_User登録のAPIを呼び出してUser情報のレスポンスが返却されたこと() throws Exception {
     // Arrange
     int expectedStatus = 201;
     String expectedResponseJson = """
