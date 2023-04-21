@@ -16,14 +16,17 @@ import com.example.demo.domain.model.User;
 @RequestMapping("/api/v1/users")
 public class UserController {
 
-    @Autowired
-    private UserUseCase userUseCase;
+  private final UserUseCase userUseCase;
 
-    @PostMapping
-    public ResponseEntity<UserResponse> createUser(@RequestBody CreateUserRequest request) {
-        User user = new User(request.getName(), request.getEmail());
-        User createdUser = userUseCase.createUser(user);
-        UserResponse response = new UserResponse(createdUser.getName(), createdUser.getEmail());
-        return ResponseEntity.ok(response);
-    }
+  public UserController(UserUseCase userUseCase) {
+    this.userUseCase = userUseCase;
+  }
+
+  @PostMapping
+  public ResponseEntity<UserResponse> createUser(@RequestBody CreateUserRequest request) {
+    User user = new User(request.getName(), request.getEmail());
+    User createdUser = userUseCase.createUser(user);
+    UserResponse response = new UserResponse(createdUser.getName(), createdUser.getEmail());
+    return ResponseEntity.ok(response);
+  }
 }
