@@ -1,6 +1,6 @@
 package com.example.demo.adapters.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +27,6 @@ public class UserController {
     User user = new User(request.getName(), request.getEmail());
     User createdUser = userUseCase.createUser(user);
     UserResponse response = new UserResponse(createdUser.getName(), createdUser.getEmail());
-    return ResponseEntity.ok(response);
+    return new ResponseEntity<>(response, HttpStatus.CREATED);
   }
 }
