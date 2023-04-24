@@ -20,9 +20,7 @@ public class UserRepositoryImpl implements UserRepository {
 
   @Override
   public User save(User user) {
-    UserJpaEntity userJpaEntity = new UserJpaEntity();
-    userJpaEntity.setName(user.getName());
-    userJpaEntity.setEmail(user.getEmail());
+    UserJpaEntity userJpaEntity = new UserJpaEntity(user.getName(), user.getEmail());
     userJpaRepository.save(userJpaEntity);
     return user;
   }
