@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.api;
 
 import com.example.demo.domain.model.User;
 import com.example.demo.infrastructure.db.jpa.entities.UserJpaEntity;
@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,8 +19,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
-public class UserApiTest {
-
+@ActiveProfiles("apitest")
+class UserApiTest {
   @Autowired
   private MockMvc mockMvc;
 
@@ -27,7 +28,7 @@ public class UserApiTest {
   private UserJpaRepository userJpaRepository;
 
   @Test
-  void createUser() throws Exception {
+  void test_usersAPIでユーザ登録を正常に行えること() throws Exception {
     // Arrange
     int expectedStatus = 201;
     String expectedResponseJson = """
