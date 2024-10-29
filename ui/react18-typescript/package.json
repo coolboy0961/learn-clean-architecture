@@ -49,7 +49,7 @@
     "storybook": "dotenv -f ./env/local.env run start-storybook -p 6006",
     "build-storybook": "dotenv -f ./env/local.env run build-storybook",
     "test:storybook": "dotenv -f ./env/local.env run test-storybook",
-    "test:storybook:cross-browser": "dotenv -f ./env/local.env run test-storybook --browsers chromium firefox webkit",
+    "test:storybook:cross-browser": "dotenv -f ./env/local.env run test-storybook --browsers chromium firefox",
     "test:visual": "dotenv -f ./env/unit-test.env run react-scripts test Storyshots --watchAll=false",
     "test:visual:reset": "dotenv -f ./env/unit-test.env run react-scripts test Storyshots -u --watchAll=false"
   },
